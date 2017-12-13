@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AndroidTreeView">
+        <attr name="titleTextSize" format="dimension"/>
+        <attr name="titleTextColor" format="color"/>
+        <attr name="levelPadding" format="dimension"/>
+        <attr name="multiSelEnable" format="boolean"/>
+        <attr name="nodeIdFormat">
+            <enum name="Long" value="0"/>
+            <enum name="String" value="1"/>
+        </attr>
+        <attr name="defaultExpandLevel" format="integer"/>
+        <attr name="openIconRes" format="reference"/>
+        <attr name="closeIcoRes" format="reference"/>
+        <attr name="intervalHeight" format="dimension"/>
+        <attr name="intervalColor" format="color"/>
+    </declare-styleable>
+</resources>
