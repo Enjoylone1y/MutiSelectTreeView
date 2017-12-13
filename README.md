@@ -7,7 +7,7 @@
 单选示例<br>
 ![image](ScreenShots/danxuan.png) <br>
 
-多选示例\<br>
+多选示例<br>
 ![image](ScreenShots/duoxuan.png) <br>
 
 
