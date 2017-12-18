@@ -1,5 +1,6 @@
 package com.ezreal.multiselecttreeview;
 
+
 import com.ezreal.treevieewlib.TreeNodeId;
 import com.ezreal.treevieewlib.TreeNodePid;
 import com.ezreal.treevieewlib.TreeNodeTitle;
@@ -10,7 +11,9 @@ import com.ezreal.treevieewlib.TreeNodeTitle;
 
 public class TypeBeanLong {
 
-    // 注意  这里的 id pid 为 long 类型
+    // 这里的 id  pid text 可以根据你的项目任意的命名
+    // 但是必须包含包含这三个字段（即节点 id,它的父节点的 id,以及节点显示的 text），并且标注对应的注解
+    // 同时 id ,pid 支持 long String 类型，可以根据你的项目来声明
 
     @TreeNodeId
     private long id;

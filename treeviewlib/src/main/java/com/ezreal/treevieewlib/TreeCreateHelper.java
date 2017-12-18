@@ -75,12 +75,16 @@ class TreeCreateHelper {
                     break;
                 }
             }
+            if (id == -1 || pId == -1 || TextUtils.isEmpty(title)) {
+                continue;
+            }
             node = new TreeNode(String.valueOf(id), String.valueOf(pId), title, t);
             nodes.add(node);
         }
 
-        setInterrelation(nodes);
-
+        if (!nodes.isEmpty()){
+            setInterrelation(nodes);
+        }
         return nodes;
     }
 
@@ -115,12 +119,16 @@ class TreeCreateHelper {
                     break;
                 }
             }
+            if (TextUtils.isEmpty(id) || TextUtils.isEmpty(pId) || TextUtils.isEmpty(title)) {
+                continue;
+            }
             node = new TreeNode(id, pId, title, t);
             nodes.add(node);
         }
 
-        setInterrelation(nodes);
-
+        if (!nodes.isEmpty()){
+            setInterrelation(nodes);
+        }
         return nodes;
     }
 

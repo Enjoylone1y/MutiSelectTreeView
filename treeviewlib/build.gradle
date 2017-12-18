@@ -1,17 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 23
     buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -22,11 +19,58 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support:recyclerview-v7:23.4.0'
 }
+
+ext {
+    publishedGroupId = 'com.ezreal'
+    artifact = 'treeviewlib'
+    libraryVersion = '1.0.0'
+
+    libraryDescription = 'Android TreeView, based on RecyclerView package, ' +
+            'support node radio or multiple choice, support for custom node text size, color,' +
+            ' height and color of the spacer line, etc.'
+
+    siteUrl = 'https://github.com/Enjoylone1y/MutiSelectTreeView'
+    gitUrl = 'https://github.com/Enjoylone1y/MutiSelectTreeView.git'
+
+    developerId = 'ezreallib'
+    developerName = 'Ezreal'
+    developerEmail = 'ezreal3852@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+//将代码上传至 jCenter 的代码
+apply plugin: 'com.novoda.bintray-release'
+
+task javadoc(type: Javadoc) {
+    options.encoding "UTF-8"
+    options.charSet 'UTF-8'
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+publish {
+    userOrg = developerId
+    groupId = publishedGroupId
+    artifactId = artifact
+    publishVersion = libraryVersion
+    desc = libraryDescription
+    website = siteUrl
+}
+
+
+
+

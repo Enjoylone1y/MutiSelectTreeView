@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Button btnConfirm = findViewById(R.id.btn_confirm);
         final TextView result = findViewById(R.id.tv_result);
-        FrameLayout layout = findViewById(R.id.layout_tree_view);
+        FrameLayout layout =  findViewById(R.id.layout_tree_view);
 
         // 通过构造方法实例化
         mTreeView = new AndroidTreeView(this);

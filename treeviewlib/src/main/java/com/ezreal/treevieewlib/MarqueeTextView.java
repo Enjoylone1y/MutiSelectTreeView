@@ -1,7 +1,6 @@
 package com.ezreal.treevieewlib;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 /**
@@ -16,11 +15,11 @@ public class MarqueeTextView extends android.support.v7.widget.AppCompatTextView
         super(context);
     }
 
-    public MarqueeTextView(Context context, @Nullable AttributeSet attrs) {
+    public MarqueeTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MarqueeTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MarqueeTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

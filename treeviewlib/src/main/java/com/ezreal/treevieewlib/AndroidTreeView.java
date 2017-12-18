@@ -3,7 +3,6 @@ package com.ezreal.treevieewlib;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -95,11 +94,11 @@ public class AndroidTreeView extends RecyclerView {
         this(context, null);
     }
 
-    public AndroidTreeView(Context context, @Nullable AttributeSet attrs) {
+    public AndroidTreeView(Context context,AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public AndroidTreeView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public AndroidTreeView(Context context,AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setLayoutManager(new LinearLayoutManager(getContext()));
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.AndroidTreeView);
@@ -135,12 +134,11 @@ public class AndroidTreeView extends RecyclerView {
 
     /**
      * 绑定 tree view 显示数据
-     * 本函数将会根据传入的 T 和 List<T> 类型的数据集合，实例化 TreeViewAdapter
      * 并通过 setAdapter 为 treeView  绑定数据
      * 可以通过 {@link AndroidTreeView#getAdapter()} 方法获得在此实例化的 TreeViewAdapter
      *
      * @param data 需要展示的数据集合
-     * @param <T>  bean 的类型
+     * @param <T> treeview 数据 bean
      */
     public <T> void bindData(List<T> data) {
         try {
@@ -169,8 +167,7 @@ public class AndroidTreeView extends RecyclerView {
      * 在单选状态下,可以通过 {@link AndroidTreeView#setTreeNodeClickListener(OnTreeNodeClickListener)},
      * 监听节点单击事件回调获得，该事件将会返回 {@link TreeNode} 类型的，被选中的单个叶子节点
      *
-     * @return 满足上述条件时：返回已选中节点（叶子节点）集合 {@link List<TreeNode>}
-     * 否则 返回 NUll
+     * @return 满足上述条件时：返回已选中节点（叶子节点）集合,否则 返回 NUll
      */
 
     public List<TreeNode> getSelected() {
@@ -199,6 +196,7 @@ public class AndroidTreeView extends RecyclerView {
 
     /**
      * 是否开启多选状态
+     * @return true 则表示当前支持多选 false 表示当前支持单选
      */
     public boolean isMultiSelEnable() {
         return mMultiSelEnable;
@@ -343,9 +341,11 @@ public class AndroidTreeView extends RecyclerView {
         @Override
         public void onBindViewHolder(RViewHolder holder, int position) {
             final TreeNode node = mViewNodes.get(position);
-            final CheckBox checkBox = holder.getConvertView().findViewById(R.id.checkbox);
+            final CheckBox checkBox = (CheckBox) holder.getConvertView()
+                    .findViewById(R.id.checkbox);
             final ImageView iconLevel = holder.getImageView(R.id.iv_icon_right);
-            final MarqueeTextView textView = holder.getConvertView().findViewById(R.id.tv_text);
+            final MarqueeTextView textView = (MarqueeTextView) holder.getConvertView()
+                    .findViewById(R.id.tv_text);
             final View interval = holder.getConvertView().findViewById(R.id.interval);
 
             node.setViewHolder(holder);

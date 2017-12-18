@@ -1,17 +1,15 @@
 package com.ezreal.treevieewlib;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -95,19 +93,6 @@ public class RViewHolder extends RecyclerView.ViewHolder{
     public void setTextColorRes(int viewId, int textColorRes) {
         TextView view = getView(viewId);
         view.setTextColor(mContext.getResources().getColor(textColorRes));
-    }
-
-    @SuppressLint("NewApi")
-    public void setAlpha(int viewId, float value) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getView(viewId).setAlpha(value);
-        } else {
-            // Pre-honeycomb hack to set Alpha value
-            AlphaAnimation alpha = new AlphaAnimation(value, value);
-            alpha.setDuration(0);
-            alpha.setFillAfter(true);
-            getView(viewId).startAnimation(alpha);
-        }
     }
 
     public void setVisible(int viewId, boolean visible) {
