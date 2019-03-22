@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SecondActivity extends AppCompatActivity {
+public class MultiSelectActivity extends AppCompatActivity {
 
     private AndroidTreeView mTreeView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_multi_sel);
 
         Button btnConfirm = findViewById(R.id.btn_confirm);
         final TextView result = findViewById(R.id.tv_result);
@@ -92,6 +92,9 @@ public class SecondActivity extends AppCompatActivity {
         list.add(bean);
 
         bean = new TypeBeanString("22","2","百色市");
+        list.add(bean);
+
+        bean = new TypeBeanString("221","22","田阳县");
         list.add(bean);
 
         bean = new TypeBeanString("111","11","天河区");

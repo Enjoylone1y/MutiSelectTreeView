@@ -5,32 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
+    <Button
+        android:id="@+id/btn_single"
         android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:background="#bfbfbf"/>
-
-    <com.ezreal.treevieewlib.AndroidTreeView
-        android:id="@+id/tree_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:text="该叶子节点被单击了："/>
+        android:text="单选"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:id="@+id/tv_result"
+    <Button
+        android:id="@+id/btn_multi"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Hello World!"
-        android:layout_marginTop="5dp"
-        android:textSize="18sp"/>
-
+        android:layout_height="wrap_content"
+        android:text="多选"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
